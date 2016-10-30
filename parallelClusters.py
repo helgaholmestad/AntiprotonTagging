@@ -83,6 +83,7 @@ theDirectories=[]
 for subdir, dirs, files in os.walk(rootdir):
     if "last" in subdir:
         continue
+    #to select only a subset of the files
    # if not "20160504_33umAl_D1_0kV_D2_3kV_E1_4kV_E2" in subdir:
    #     continue
     for file in files:
