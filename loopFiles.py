@@ -14,7 +14,7 @@ distanceR=6.1
 rootdir="/home/helga/dataFromEinzelLensesScan/"
 counter=0
 def countNumberForSetting(filepattern,outputfile):
-    outputfile.write(filepattern)
+    outputfile.write(filepattern+"\n")
     counter=0
     totalNumberOfAntiprotons=0
     totalNumberOfShoots=0
@@ -28,8 +28,11 @@ def countNumberForSetting(filepattern,outputfile):
                 outputfile.write("new shoot\n")
                 print  "processing file",subdir+"/"+file
                 results=tagAntiprotons.findAntiprotonsInFile(str(subdir+"/"+file), nameOfFile)
-                for time  in results:
-                    outputfile.write(str(time)+"\n")
+                if results=="noFile":
+                    outputfile.write("noFile\n")
+                else:
+                    for time  in results:
+                        outputfile.write(str(time)+"\n")
                     
 listOfFiles=["D1_0kV_D2_3kV_E1_0kV_E2_3kV","D1_0kV_D2_3kV_E1_1kV_E2_3kV", "D1_0kV_D2_3kV_E1_2kV_E2_3kV", "D1_0kV_D2_3kV_E1_3kV_E2_3kV", "D1_0kV_D2_3kV_E1_4kV_E2_3kV", "D1_0kV_D2_3kV_E1_5kV_E2_3kV"]
 
