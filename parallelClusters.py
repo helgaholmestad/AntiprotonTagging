@@ -108,7 +108,7 @@ ppservers = ()
 start_time = time.time()
 
 jobs=[]
-
+#run the clustering in paralell
 for k in range(len(theFiles)):
     jobs.append(job_server.submit(doClustering,(theFiles[k],),(processFile,),("numpy",)))
 
