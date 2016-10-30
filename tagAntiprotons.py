@@ -7,7 +7,7 @@ from ROOT import gROOT, TCanvas,TH1D,TH2D,TFile,TStyle,TLegend,TPave,TPaveStats,
 gROOT.Reset()
 
 
-
+#to print histogram for debugging
 def printCanvas(histogram,title):
     can=TCanvas()
     histogram.Draw("colz")
