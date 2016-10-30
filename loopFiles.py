@@ -6,7 +6,7 @@ print sys.argv
 import os
 import os.path
 import re
-import  houghTransformWithoutRoot
+import  tagAntiprotons
 print "skriv her"
 pixelList=[]
 distanceT=20.
@@ -27,7 +27,7 @@ def countNumberForSetting(filepattern,outputfile):
                 title=str(file)
                 outputfile.write("new shoot\n")
                 print  "processing file",subdir+"/"+file
-                results=houghTransformWithoutRoot.findAntiprotonsInFile(str(subdir+"/"+file), nameOfFile)
+                results=tagAntiprotons.findAntiprotonsInFile(str(subdir+"/"+file), nameOfFile)
                 for time  in results:
                     outputfile.write(str(time)+"\n")
                     
